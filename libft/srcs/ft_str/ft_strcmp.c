@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cmp.h                                           :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/08 10:39:09 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 13:05:21 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/01/15 00:27:34 by obelair           #+#    #+#             */
+/*   Updated: 2021/01/15 00:34:11 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CMP_H
-# define FT_CMP_H
+#include "../../incs/ft_str.h"
 
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
-int		ft_max(int n1, int n2);
-int		ft_min(int n1, int n2);
-int		ft_strisalpha(char *str);
-int		ft_strisdigit(char *str);
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	int i;
 
-#endif
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}

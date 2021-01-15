@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cmp.h                                           :+:      :+:    :+:   */
+/*   ft_strisdigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/08 10:39:09 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 13:05:21 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/01/15 00:50:30 by obelair           #+#    #+#             */
+/*   Updated: 2021/01/15 00:53:33 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CMP_H
-# define FT_CMP_H
+#include "../../incs/ft_cmp.h"
 
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
-int		ft_max(int n1, int n2);
-int		ft_min(int n1, int n2);
-int		ft_strisalpha(char *str);
-int		ft_strisdigit(char *str);
+int	ft_strisdigit(char *str)
+{
+	int i;
 
-#endif
+	i = 0;
+	while (str && str[i] && ft_isdigit(str[i]))
+		i++;
+	if (!str || !ft_isdigit(str[i]))
+		return (1);
+	return (0);
+}
