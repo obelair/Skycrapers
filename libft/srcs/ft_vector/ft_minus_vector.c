@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   skycrapers.c                                       :+:      :+:    :+:   */
+/*   ft_minus_vector.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 22:01:28 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/14 22:01:28 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/06/06 18:09:09 by obelair           #+#    #+#             */
+/*   Updated: 2021/06/06 18:09:57 by obelair          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "skyscrapers.h"
-#include <stdio.h>
+#include "ft_vector.h"
 
-int     main(int ac, char **av)
+t_vector	ft_minus_vector(t_vector u, t_vector v)
 {
-	t_setting	ts;
+	t_vector	result;
 
-	if(sky_check_arg(ac, av, &ts))
-		return(0);
-	ft_printf("All is fine! Let's get started!\n\tSize --> %d\n\tMode --> %s\n\tDifficulty --> %s\n", ts.size, ts.mode, ts.difficulty);
-    return (0);
+	result.x = u.x - v.x;
+	result.y = u.y - v.y;
+	result.z = u.z - v.z;
+	return (result);
 }

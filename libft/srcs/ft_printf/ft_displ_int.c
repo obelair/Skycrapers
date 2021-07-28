@@ -6,11 +6,11 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 13:38:17 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 10:59:12 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/05/14 09:55:40 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_printf.h"
+#include "libft.h"
 
 static void	ft_display(t_format *tf, long long val)
 {
@@ -24,7 +24,7 @@ static void	ft_display(t_format *tf, long long val)
 		ft_displ_spc(tf, tf->width);
 }
 
-void		ft_displ_int(t_format *tf, char *base)
+void	ft_displ_int(t_format *tf, char *base)
 {
 	long long	val;
 

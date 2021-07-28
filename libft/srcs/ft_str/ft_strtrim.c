@@ -6,16 +6,16 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 13:12:28 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 10:59:12 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/05/14 09:55:40 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_str.h"
+#include "libft.h"
 
 static int	ft_trimend(const char *s1, const char *set)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = ft_strlen(s1) - 1;
@@ -34,8 +34,8 @@ static int	ft_trimend(const char *s1, const char *set)
 
 static int	ft_trimstart(const char *s1, const char *set)
 {
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -52,7 +52,7 @@ static int	ft_trimstart(const char *s1, const char *set)
 	return (j);
 }
 
-char		*ft_strtrim(const char *s1, const char *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*trim;
 	int		trimlen;
@@ -63,7 +63,8 @@ char		*ft_strtrim(const char *s1, const char *set)
 	if ((size_t)ft_trimstart(s1, set) == ft_strlen(s1))
 		return (ft_strdup(""));
 	trimlen = ft_trimend(s1, set) - ft_trimstart(s1, set) + 1;
-	if (!(trim = malloc(sizeof(char) * (trimlen + 1))))
+	trim = malloc(sizeof(char) * (trimlen + 1));
+	if (!trim)
 		return (NULL);
 	i = 0;
 	while (i < trimlen)

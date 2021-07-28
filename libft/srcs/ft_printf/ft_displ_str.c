@@ -6,11 +6,11 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 12:44:58 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 10:59:12 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/05/14 09:55:40 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_printf.h"
+#include "libft.h"
 
 static void	ft_display(t_format *tf, char *str)
 {
@@ -29,11 +29,12 @@ static void	ft_display(t_format *tf, char *str)
 		tf->nbprint += tf->lenvar;
 }
 
-void		ft_displ_str(t_format *tf)
+void	ft_displ_str(t_format *tf)
 {
 	char	*str;
 
-	if (!(str = va_arg(*(tf->ap), char *)))
+	str = va_arg(*(tf->ap), char *);
+	if (!str)
 		str = "(null)";
 	tf->lenvar = ft_strlen(str);
 	if (tf->width && tf->point)

@@ -6,17 +6,15 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:16:27 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 14:11:22 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/06/22 17:26:01 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_str.h"
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {
-	if (!str)
+	if (!str || !*str)
 		return (0);
-	if (!*str)
-		return (1);
 	return (ft_strlen(str + 1) + 1);
 }

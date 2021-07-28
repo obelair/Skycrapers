@@ -6,11 +6,11 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 20:28:09 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/09 20:28:09 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/05/14 09:55:40 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_printf.h"
+#include "libft.h"
 
 static int	ft_spec(t_format *tf, const char *str, int i)
 {
@@ -63,9 +63,11 @@ static int	ft_prec(t_format *tf, const char *str, int i)
 			tf->wprec = va_arg(*(tf->ap), int);
 			i++;
 		}
-		else if (ft_isdigit(str[i]))
+		else if (ft_isdigit(str[i]) || str[i] == '-')
 		{
 			tf->wprec = ft_atoi(str + i);
+			if (str[i] == '-')
+				i++;
 			while (ft_isdigit(str[i]))
 				i++;
 		}
@@ -99,9 +101,9 @@ static int	ft_width(t_format *tf, const char *str, int i)
 	return (ft_prec(tf, str, i));
 }
 
-int			ft_scan_str(t_format *tf, const char *str)
+int	ft_scan_str(t_format *tf, const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (ft_strchr("-0 +#", str[i]))

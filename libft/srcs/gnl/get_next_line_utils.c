@@ -6,11 +6,11 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 18:14:22 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 10:59:12 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/05/14 09:55:40 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/get_next_line.h"
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -24,9 +24,9 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int		ft_strchr(const char *s, int c)
+int	ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!s)
@@ -50,7 +50,8 @@ char	*ft_strjoin(char *s1, const char *s2)
 	i = -1;
 	lens1 = ft_strlen(s1);
 	lens2 = ft_strlen(s2);
-	if (!(cat = malloc(sizeof(char) * (lens1 + lens2) + 1)))
+	cat = malloc(sizeof(char) * (lens1 + lens2) + 1);
+	if (!cat)
 		return (NULL);
 	while (s1 && s1[++i])
 		cat[i] = s1[i];
@@ -71,15 +72,18 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		return (NULL);
 	if (len > ft_strlen(s))
 		len = ft_strlen(s);
-	if (!(sub = malloc(sizeof(char) * (len + 1))))
+	sub = malloc(sizeof(char) * (len + 1));
+	if (!sub)
 		return (NULL);
 	i = 0;
 	if (ft_strlen(s) > (size_t)start)
+	{
 		while (i < len && s[start + i])
 		{
 			sub[i] = s[start + i];
 			i++;
 		}
+	}
 	sub[i] = '\0';
 	return (sub);
 }

@@ -6,13 +6,13 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 08:57:31 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 10:59:12 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/06/06 14:01:38 by obelair          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_str.h"
+#include "libft.h"
 
-static int		ft_nbword(const char *s, char c)
+static int	ft_nbword(const char *s, char c)
 {
 	int	i;
 	int	nb;
@@ -33,7 +33,14 @@ static	char	**ft_freeall(char **split, int i)
 	return (NULL);
 }
 
-char			**ft_split(const char *s, char c)
+static int	strnchr(const char *str, char c, int beg)
+{
+	while (str[beg] && str[beg] == c)
+		beg++;
+	return (beg);
+}
+
+char	**ft_split(const char *s, char c)
 {
 	char	**split;
 	int		i;
@@ -41,19 +48,20 @@ char			**ft_split(const char *s, char c)
 
 	if (!s)
 		return (NULL);
-	if (!(split = malloc(sizeof(char *) * (ft_nbword(s, c) + 1))))
+	split = malloc(sizeof(char *) * (ft_nbword(s, c) + 1));
+	if (!split)
 		return (NULL);
 	i = 0;
 	beg = 0;
 	while (i < ft_nbword(s, c))
 	{
-		while (s[beg] == c && s[beg])
-			beg++;
+		beg = strnchr(s, c, beg);
 		if (s[beg] != c && s[beg])
 		{
-			if (!(split[i] = ft_substr(s, beg, ft_strichr(s + beg, c) - beg)))
+			split[i] = ft_substr(s, beg, ft_strichr(s + beg, c));
+			if (!split[i])
 				return (ft_freeall(split, i));
-			beg = ft_strichr(s + beg, c);
+			beg += ft_strichr(s + beg, c) + 1;
 			i++;
 		}
 	}

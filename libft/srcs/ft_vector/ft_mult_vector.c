@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_mult_vector.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/29 15:30:52 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 08:35:08 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/06/06 18:50:28 by obelair           #+#    #+#             */
+/*   Updated: 2021/06/06 18:50:49 by obelair          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_vector.h"
 
-# include <string.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "ft_str.h"
+t_vector	ft_mult_vector(t_vector u, float k)
+{
+	t_vector	result;
 
-# define BUFFER_SIZE 42
-
-int		get_next_line(int fd, char **line);
-
-#endif
+	result.x = u.x * k;
+	result.y = u.y * k;
+	result.z = u.z * k;
+	return (result);
+}

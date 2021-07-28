@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strisalpha.c                                    :+:      :+:    :+:   */
+/*   ft_add_vector.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/15 00:42:18 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/15 00:50:11 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/06/06 17:15:27 by obelair           #+#    #+#             */
+/*   Updated: 2021/06/06 18:08:50 by obelair          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_cmp.h"
+#include "ft_vector.h"
 
-int	ft_strisalpha(char *str)
+t_vector	ft_add_vector(t_vector u, t_vector v)
 {
-	int i;
+	t_vector	result;
 
-	i = 0;
-	while (str && str[i] && 'a' <= str[i] && str[i] < 'z')
-		i++;
-	if (!str || 'z' < str[i] || str[i] < 'a')
-		return (1);
-	return (0);
+	result.x = u.x + v.x;
+	result.y = u.y + v.y;
+	result.z = u.z + v.z;
+	return (result);
 }

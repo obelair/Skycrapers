@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/15 00:50:30 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/15 00:53:33 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/03/05 13:53:47 by obelair           #+#    #+#             */
+/*   Updated: 2021/06/16 14:54:29 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_cmp.h"
+#include "libft.h"
 
 int	ft_strisdigit(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (str && str[i] && ft_isdigit(str[i]))
+	while (str && str[i] && (str[i] == '-' || ft_isdigit(str[i])))
 		i++;
-	if (!str || !ft_isdigit(str[i]))
+	if (!str || (str[i] && str[i] != '-' && !ft_isdigit(str[i])))
 		return (1);
 	return (0);
 }

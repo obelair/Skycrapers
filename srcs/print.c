@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: obelair <obelair@student.42Lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/14 22:07:12 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/14 22:13:25 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/07/28 15:31:26 by obelair           #+#    #+#             */
+/*   Updated: 2021/07/28 15:54:15 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "skyscrapers.h"
+#include "skycrapers.h"
 
-void	sky_init_setting(t_setting *ts)
+void	print_result(int **map, int size)
 {
-	ts->size = 0;
-	ts->mode = 0;
-	ts->difficulty = 0;
-}
+	int	i;
+	int	j;
 
-void	sky_init_hint(t_hint *th)
-{
-	th->bot = 0;
-	th->left = 0;
-	th->right = 0;
-	th->top = 0;
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size - 1)
+		{
+			printf("%d ", map[i][j]);
+			j++;
+		}
+		printf("%d\n", map[i][j]);
+		i++;
+	}
 }

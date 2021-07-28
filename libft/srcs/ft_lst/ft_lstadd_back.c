@@ -6,11 +6,11 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 17:17:35 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 12:28:02 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/05/14 09:55:40 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_lst.h"
+#include "libft.h"
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {

@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cmp.h                                           :+:      :+:    :+:   */
+/*   ft_div_vector.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/08 10:39:09 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 13:05:21 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/06/06 18:38:09 by obelair           #+#    #+#             */
+/*   Updated: 2021/06/06 18:52:01 by obelair          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_CMP_H
-# define FT_CMP_H
+#include "ft_vector.h"
 
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
-int		ft_max(int n1, int n2);
-int		ft_min(int n1, int n2);
-int		ft_strisalpha(char *str);
-int		ft_strisdigit(char *str);
+t_vector	ft_div_vector(t_vector u, float k)
+{
+	t_vector	result;
 
-#endif
+	if (k)
+	{
+		result.x = u.x / k;
+		result.y = u.y / k;
+		result.z = u.z / k;
+	}
+	else
+	{
+		result.x = 0;
+		result.y = 0;
+		result.z = 0;
+	}
+	return (result);
+}

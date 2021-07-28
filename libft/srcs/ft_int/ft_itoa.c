@@ -6,11 +6,11 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 08:21:33 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 15:35:23 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/05/14 09:55:40 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_int.h"
+#include "libft.h"
 
 char	*ft_itoa(int n)
 {
@@ -23,7 +23,8 @@ char	*ft_itoa(int n)
 		i = ft_intblen(n, 10) + 1;
 	else
 		i = ft_intblen(n, 10);
-	if (!(result = calloc(sizeof(char), (i + 1))))
+	result = calloc(sizeof(char), (i + 1));
+	if (!result)
 		return (NULL);
 	if (nb < 0)
 	{

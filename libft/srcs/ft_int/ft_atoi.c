@@ -6,18 +6,18 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:22:59 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 14:04:32 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/05/14 09:55:40 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_int.h"
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
 	int	i;
 	int	neg;
 	int	nbr;
-	int count;
+	int	count;
 
 	i = 0;
 	neg = 1;

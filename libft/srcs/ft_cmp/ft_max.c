@@ -6,13 +6,13 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 10:36:59 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 13:06:59 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/06/08 22:23:20 by obelair          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_cmp.h"
+#include "libft.h"
 
-int		ft_max(int n1, int n2)
+int	ft_max(int n1, int n2)
 {
 	if (n1 > n2)
 		return (n1);
