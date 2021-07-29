@@ -6,19 +6,29 @@
 /*   By: obelair <obelair@student.42Lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 14:32:04 by obelair           #+#    #+#             */
-/*   Updated: 2021/07/28 16:04:59 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/07/28 22:25:11 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "skycrapers.h"
 
-int	init_struct(t_sky *sky)
+void	set_as_null(t_sky *sky)
+{
+	sky->nb_sol = 0;
+	sky->list_sol = NULL;
+	sky->cur.nb_left = NULL;
+	sky->cur.map = NULL;
+	sky->clues.top = NULL;
+	sky->clues.bot = NULL;
+	sky->clues.left = NULL;
+	sky->clues.right = NULL;
+}
+
+int	init_current(t_sky *sky)
 {
 	int	i;
 
 	i = 0;
-	sky->nb_sol = 0;
-	sky->list_sol = NULL;
 	sky->cur.nb_left = ft_calloc(sky->size, sizeof(int));
 	if (ft_lstadd_void(&sky->list, sky->cur.nb_left, 0))
 		return (printf("Init\n"));
@@ -33,7 +43,5 @@ int	init_struct(t_sky *sky)
 			return (printf("Init\n"));
 		i++;
 	}
-	if (ft_lstadd_dbl(&sky->list, (void **)sky->cur.map, sky->size, 0))
-		return (printf("Init\n"));
 	return (0);
 }

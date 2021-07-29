@@ -46,11 +46,23 @@ typedef struct s_sky
 }	t_sky;
 
 int		arg_check(t_sky *sky, int ac, char **ag);
+int		clues_check(t_sky *sky);
 
 int		parsing_data(t_sky *sky, char *clues);
 
-int		init_struct(t_sky *sky);
+void	set_as_null(t_sky *sky);
+int		init_current(t_sky *sky);
 
-void	print_result(int **map, int size);
+void	print_result(t_sky *sky, int **map, int size);
+
+void	pre_fill_cell(t_sky *sky, int cell, int value);
+void	pre_fill(t_sky *sky);
+
+int		is_in_col(int **map, int value, int col, int size);
+int		is_in_row(int **map, int value, int row, int size);
+void	find_last(t_sky *sky, int value);
+
+int		ft_count(int *tab, int nb, int size);
+int		ft_count_col(int **tab, int nb, int size, int col);
 
 #endif
