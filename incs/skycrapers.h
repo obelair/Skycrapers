@@ -61,6 +61,9 @@ void	pre_fill(t_sky *sky);
 int		is_in_col(int **map, int value, int col, int size);
 int		is_in_row(int **map, int value, int row, int size);
 void	find_last(t_sky *sky, int value);
+int		find_answer(t_sky *sky, int position);
+
+int		check_views(t_sky *sky, int position);
 
 int		ft_count(int *tab, int nb, int size);
 int		ft_count_col(int **tab, int nb, int size, int col);

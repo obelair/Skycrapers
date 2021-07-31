@@ -31,18 +31,19 @@ int	main(int ac, char **ag)
 		return (ft_exit(&sky.list, EXIT_FAILURE));
 	if (init_current(&sky))
 		return (ft_exit(&sky.list, EXIT_FAILURE));
-	printf("-------------------------------------\n");
-	printf("Hauteur tour \t| Nb restant a placer\n");
-	printf("-------------------------------------\n");
-	i = 0;
-	while (i < sky.size)
-	{
-		printf("\t%d\t|\t %d \t\n", i + 1, sky.cur.nb_left[i]);
-		i++;
-	}
-	printf("-------------------------------------\n");
-	print_result(&sky, sky.cur.map, sky.size);
+	// printf("-------------------------------------\n");
+	// printf("Hauteur tour \t| Nb restant a placer\n");
+	// printf("-------------------------------------\n");
+	// i = 0;
+	// while (i < sky.size)
+	// {
+	// 	printf("\t%d\t|\t %d \t\n", i + 1, sky.cur.nb_left[i]);
+	// 	i++;
+	// }
+	// printf("-------------------------------------\n");
+	// print_result(&sky, sky.cur.map, sky.size);
 	pre_fill(&sky);
+	find_answer(&sky, 0);
 	/*
 	- Error System
 	- Parsing
